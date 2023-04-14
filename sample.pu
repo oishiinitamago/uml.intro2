@@ -1,0 +1,10 @@
+@startuml 例題1
+left to right direction
+actor 利用者 #Pink;line:black;line.bold;
+rectangle ATM {
+usecase 預金する
+usecase 預金を引き出す
+}
+利用者 --> 預金する
+利用者 --> 預金を引き出す
+@enduml
