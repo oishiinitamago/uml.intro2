@@ -1,0 +1,37 @@
+@startuml 車両貸出システム
+skinparam classAttributeIconSize 0
+class 顧客{
+    - 氏名:String
+    - 電話番号:String
+    - 郵便番号:int
+    - 住所:String
+    --- 
+    + get氏名():String
+    + set氏名(name:String):void
+}
+class 車{
+    - 管理番号:String
+    - 車種:String
+    - 駆動:String
+    ---
+    + get管理番号():String
+    + set氏名(:String):void
+}
+class 予約{
+    - 予約番号:String
+    - 管理番号:String
+    - 日付:String
+    - 顧客ID:int
+}
+class 空車リスト{
+    - 管理番号:String
+}
+class 貸出{
+    - 貸出番号:String
+}
+hide 顧客 circle
+hide 車 circle
+hide 予約 circle
+hide 空車リスト circle
+hide 貸出 circle
+@enduml
