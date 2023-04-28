@@ -1,0 +1,33 @@
+@startuml 関連
+left to right direction
+skinparam classAttributeIconSize 0
+class 会社{}
+class 社員{}
+' 会社 --> 社員:雇う >
+' 会社"1"--"*" 社員
+会社"雇用者"--"従業員" 社員
+会員リスト o-- 会員
+note right of 会員リスト
+会員クラスがなくて成り立つ
+end note
+
+パソコン "1" *-- ハードディスク
+note right of パソコン
+ハードディスクがないと成り立ちません。
+end note
+
+注文 <.. 注文管理
+note top of 注文管理
+注文管理が注文のメソッドもしくは属性を呼び出している
+end note
+
+hide 会社 circle
+hide 社員 circle
+hide 会員リスト circle
+hide 会員 circle
+hide パソコン circle
+hide ハードディスク circle
+hide 注文 circle
+hide 注文管理 circle
+
+@enduml

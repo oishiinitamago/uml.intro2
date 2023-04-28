@@ -1,0 +1,20 @@
+@startuml 図3-5_抽象化
+abstract class Animal <<abstract>> {
+---
++ Walk():void
++ {abstract} eat():int
++ {abstract} cry():void
+}
+class Dog {
+---
++ eat():int
++ cry():void
+}
+class Cat {
+---
++ eat():int
++ cry():void
+}
+Animal <|-down- Dog
+Animal <|-down- Cat
+@enduml
