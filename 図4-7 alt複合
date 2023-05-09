@@ -1,0 +1,48 @@
+@startuml 図4-7 alt複合フラグメント
+hide footbox
+autonumber /'メッセージに自動で番号を降る '/
+skinparam style strictuml /' 厳密なUMLに準拠する '/
+
+Actor 顧客 as user
+participant ":<u>入力画面</u>" as input
+participant ":<u>貸出コントローラ</u>" as control
+
+user -> input : データ入力
+
+activate  input
+
+  alt 登録会員
+    input -> control:通常貸出()
+   
+    activate  control
+    deactivate control
+  else 非登録会員
+    input -> control:割増料金で貸出()
+    activate  control
+    deactivate control
+  end alt
+       
+deactivate control
+
+@enduml
+
+
+
+
+
+
+
+
+
+
+
+cl_linuxサーバ構築_sys2-1_2023 へのメッセージ
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+@startuml 演習3-1_CL_雇用形態
+
+class 従業員 {
+---
+}
+class 派遣 {
+---
+}
+class 契約社員 {
+---
+}
+class 正社員 {
+---
+}
+従業員 <|-down- 派遣
+従業員 <|-down- 契約社員
+従業員 <|-down- 正社員
+@enduml
