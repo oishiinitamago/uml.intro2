@@ -1,0 +1,24 @@
+@startuml 演習4-1_SD_ラーメン屋さんでの注文
+hide footbox
+    'メッセージに自動で番号を降る
+autonumber
+    ' 厳密なUMLに準拠する
+skinparam style strictuml
+actor "<u>:客</u>" as custmer
+participant ":<u>:フロア店員</u>" as clerk
+participant ":<u>:料理人</u>" as cook
+activate custmer
+    custmer -> clerk: ラーメンを注文する
+    activate clerk
+        clerk -> cook: 調理を指示する
+        activate cook
+            cook -> cook: 調理をする
+            clerk <- cook: ラーメン
+        deactivate cook
+        custmer <-- clerk: ラーメン
+    deactivate clerk
+deactivate custmer
+
+
+
+@enduml
