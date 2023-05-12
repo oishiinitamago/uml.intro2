@@ -1,0 +1,16 @@
+@startuml 演習4-2_SD_利用者と予約画面
+hide footbox
+    'メッセージに自動で番号を降る
+autonumber
+    ' 厳密なUMLに準拠する
+skinparam style strictuml
+participant "<u>:利用者</u>" as custmer
+participant ":<u>予約画面</u>" as clerk
+activate custmer
+    custmer -> clerk: ログイン()
+    activate clerk
+        clerk -> clerk: 確認操作を呼び起こす()
+    deactivate clerk
+deactivate custmer
+
+@enduml

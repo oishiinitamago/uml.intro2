@@ -1,0 +1,22 @@
+@startuml データ更新コントローラとホテルと予約
+hide footbox
+    'メッセージに自動で番号を降る
+autonumber
+    ' 厳密なUMLに準拠する
+skinparam style strictuml
+participant "<u>コントローラ</u>" as custmer
+participant ":<u>ホテル</u>" as clerk
+participant ":<u>予約</u>" as cook
+activate custmer
+    custmer -> clerk: 予約操作を呼び起こす
+    activate clerk
+        clerk -> cook: 予約オブジェクトを作成する
+        activate cook
+            cook -> cook: 予約する
+            clerk <- cook: 予約オブジェクトを作成する
+        deactivate cook
+        custmer <-- clerk: 予約登録操作を呼び起こす
+    deactivate clerk
+deactivate custmer
+
+@enduml
