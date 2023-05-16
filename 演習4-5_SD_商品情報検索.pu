@@ -1,0 +1,28 @@
+@startuml データ更新コントローラとホテルと予約
+hide footbox
+    'メッセージに自動で番号を降る
+autonumber
+    ' 厳密なUMLに準拠する
+skinparam style strictuml
+participant "<u>会員</u>" as custmer
+participant ":<u><<boundary>></u>" as clerk
+participant ":<u><<control>></u>" as cook
+participant ":<u><<entity>></u>" as a
+participant ":<u><<entity>></u>" as b
+activate custmer
+    custmer -> clerk: 
+    activate clerk
+        clerk -> cook: 
+        activate cook
+            cook --> a: <<create>> 生成()
+            cook --> b: <<create>> 生成()
+            activate a
+            cook --> a: 
+            clerk <-- cook: 
+            deactivate a
+        deactivate cook
+        clerk -> clerk: 
+    deactivate clerk
+deactivate custmer
+
+@enduml

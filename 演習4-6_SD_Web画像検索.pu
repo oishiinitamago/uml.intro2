@@ -1,0 +1,25 @@
+@startuml データ更新コントローラとホテルと予約
+hide footbox
+    'メッセージに自動で番号を降る
+autonumber
+    ' 厳密なUMLに準拠する
+skinparam style strictuml
+actor ":ユーザー" as a
+participant "<u>:ブラウザ</u>" as custmer
+participant ":<u>:Webサーバー</u>" as clerk
+participant ":<u>:画像サーバー</u>" as cook
+activate a
+activate custmer
+    a -> custmer :閲覧したい画像のリンクボタンを押します
+    custmer -> clerk: その画像を探すように画像のファイル名をWebサーバーに伝える
+    activate clerk
+        clerk -> cook: 該当する画像ファイルを探す
+        activate cook
+            clerk <- cook: 閲覧可能な状態にする
+        deactivate cook
+        custmer <-- clerk: 画像ファイルを再生
+    deactivate clerk
+deactivate custmer
+deactivate a
+
+@enduml
