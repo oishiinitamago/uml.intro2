@@ -1,0 +1,13 @@
+@startuml 部屋オブジェクト
+' left to right direction
+[*] -right-> 空室状況
+state c <<choice>>
+state c <<choice>>
+空室状況 -down-> c
+c --> 予約完了 :空室であれば
+c -right-> 使用状態 : 満室
+' PlantUMLに結合点の表示形式はない
+予約完了 --> 使用状態
+使用状態 -right-> [*]
+
+@enduml
