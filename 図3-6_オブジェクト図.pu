@@ -1,22 +1,19 @@
 @startuml 図3-6_オブジェクト図
 left to right direction
-object "<u>空車リスト2: 空車リスト</u>" as k2 {
-日付 = 2023/04/28
+object "<u>社員: 高橋洋平</u>" as k2 {
+情報処理技術者試験 申し出 = 2020年10月21日
+LinuC試験Level1 申し出 = 2021年3月28日
 }
-object "<u>空車リスト1: 空車リスト</u>" as k1 {
-日付 = 2023/04/27
+object "<u>社員: 樋口正之</u>" as k1 {
+情報処理技術者試験 申し出 = 2023/04/27
 }
-object "<u>車情報1: 車</u>" as car1 {
-管理番号= 5
-車種 = トヨタ プリウス
-貸出料金 = 1日 1万5千円
+object "<u>資格 </u>" as car1 {
+情報処理技術者試験の情報処理安全確保支援士
 }
-object "<u>車情報2: 車</u>" as car2 {
-管理番号= 6
-車種 = 日産 リーフ
-貸出料金 = 1日 = 2万円
+object "<u>資格</u>" as car2 {
+LinuC試験Level1
 }
 k1 -- car1
-k1 -- car2
+k2 -- car2
 k2 -- car1
 @enduml
