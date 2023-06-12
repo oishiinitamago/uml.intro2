@@ -1,0 +1,15 @@
+@startuml ユースケース図_自動販売機
+left to right direction
+actor 利用客 #DDDDDD;line:black;line.bold;
+actor ベンダー #DDDDDD;line:black;line.bold;
+rectangle 自動販売機 {
+usecase 現金で商品を買う << U1 >>
+usecase カードで商品を買う << U2 >>
+usecase 商品を補充する << U3 >>
+usecase お金を調整 << U4 >>
+}
+利用客 --> 現金で商品を買う
+利用客 --> カードで商品を買う
+ベンダー --> 商品を補充する
+ベンダー --> お金を調整
+@enduml

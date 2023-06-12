@@ -1,0 +1,35 @@
+@startuml 演6-4-1_クラス図_自動販売機
+skinparam classAttributeIconSize 0
+class 自動販売機 {
+---
+- 商品提供
+---
++ 商品提供設定():(商品名:String):void
+}
+class ボタン {
+}
+class 料金装置 {
+---
+- 価格
+- 会計
+---
++ 価格設定():int
++ 会計設定():int
+}
+class ベンダー装置 {
+---
+- 補充
+- 点検
+---
++ 補充調整(社員ID:int):void
++ 点検整備()
+}
+hide 自動販売機 circle
+hide ボタン circle
+hide 料金装置 circle
+hide ベンダー装置 circle
+
+自動販売機"1"*--"*"ボタン
+自動販売機"1"*--"1"料金装置
+自動販売機"1"*--"1"ベンダー装置
+@enduml
