@@ -1,0 +1,9 @@
+@startuml ステートマシン図_自動販売機
+left to right direction
+[*] -right-> 料金投入待ち 
+料金投入待ち -down-> ボタン選択待ち  :料金受取り
+' PlantUMLに結合点の表示形式はない
+ボタン選択待ち --> ドリンク排出中
+ドリンク排出中 -right-> [*]
+
+@enduml
