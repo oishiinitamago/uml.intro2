@@ -1,0 +1,14 @@
+@startuml ライントレーサー
+' left to right direction
+state ライントレーサー {
+電源SW -down-> CPU
+電源SW <-up- CPU
+'予約と確認 -up-> 電源SW
+CPU -down-> 左モーター :OFFで左旋回
+CPU -down-> 右モーター :OFFで右旋回
+左モーター -up-> CPU 
+右モーター -up-> CPU 
+    [*] -> 電源SW :電源SW ON
+    電源SW -> [*] :電源SW OFF
+}
+@enduml

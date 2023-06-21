@@ -1,0 +1,18 @@
+@startuml ユースケース図_ライントレーサー
+left to right direction
+actor ユーザー #DDDDDD;line:black;line.bold;
+rectangle ライントレーサー{
+usecase 光センサー
+usecase 左モーター
+usecase 右モーター
+usecase CPU
+usecase 電源SW
+
+}
+ユーザー --> 電源SW :<off>
+ユーザー --> 電源SW :<on>
+電源SW --> CPU
+CPU --> 光センサー
+光センサー --> 左モーター:<<明るい時はoffで右旋回>>
+光センサー --> 右モーター:<<暗い時はoffで左旋回>>
+@enduml
