@@ -1,0 +1,52 @@
+@startuml クラス図_ライントレーサー
+skinparam classAttributeIconSize 0
+left to right direction
+class ライントレーサー {
+
+}
+class 光センサー {
+- 属性1:int
+- 属性2:String
+}
+class 右モーター {
+---
++ 操作1():void
++ 操作2():String
+}
+class 左モーター {
+- 属性1:int
+- 属性2:String
+---
++ 操作1():void
++ 操作2():String
+}
+class CPU {
+- 属性1:int
+- 属性2:String
+---
++ 操作1():void
++ 操作2():String
+}
+class 電源SW {
+- 属性1:int
+- 属性2:String
+---
++ 操作1():void
++ 操作2():String
+}
+
+光センサー "1" <-- "1"  左モーター
+光センサー "1" <-- "1" 右モーター
+
+ライントレーサー "1" *-- "1" CPU
+ライントレーサー "1" *-- "1" 電源SW
+ライントレーサー "1" *-- "1" 光センサー
+
+
+hide ライントレーサー circle
+hide 光センサー circle
+hide 右モーター circle
+hide 左モーター circle
+hide CPU circle
+hide 電源SW circle
+@enduml
