@@ -1,0 +1,23 @@
+@startuml コンビニで弁当買う
+title コンビニ
+|客|
+start
+:弁当をレジに持っていく;
+|店員|
+fork
+if (温めますか？) then (Yes)
+:弁当を温める;
+else (No)
+endif
+:弁当を袋に入れる;
+fork again
+|客|
+:お金を支払う;
+|店員|
+:清算する;
+end fork
+|客|
+:弁当を手にもつ;
+stop
+
+@enduml
