@@ -1,0 +1,80 @@
+@startuml AC_ハンバーガーショップ
+'skinparam classAttributeIconSize 0
+class 注文 {
+合計
+}
+class 注文明細 {
+数量
+小計
+} 
+class 割引クーポン {
+値引額
+期限
+}
+class 商品 {
+名称
+単価
+}
+class カップ {
+サイズ
+}
+class ドリンク {
+種別
+}
+class フード {
+}
+class レシピ {
+}
+class 材料 {
+
+}
+class ハンバーガー {
+種別
+}
+class ポテト {
+サイズ
+}
+class パン {
+}
+class 肉 {
+}
+class 野菜 {
+}
+class チーズ {
+}
+
+注文 "1" o-right-"*" 注文明細
+注文明細 "0..*"-down- "1" 商品
+注文明細 "0..*"-right-"0..1" 割引クーポン
+カップ "1..3"-right-"0..*" ドリンク
+フード "1"-right-"1" レシピ
+ハンバーガー "1..*" o-left-"1..*" 材料
+商品  <|--left- ドリンク
+商品  <|--down- フード
+フード  <|--down- ハンバーガー
+フード  <|--down- ポテト
+材料  <|--down- パン
+材料  <|--down- 肉
+材料  <|--down- 野菜
+材料  <|--down- チーズ
+
+
+
+
+hide 注文 circle
+hide 注文明細 circle
+hide 割引クーポン circle
+hide 商品 circle
+hide カップ circle
+hide ドリンク circle
+hide フード circle
+hide レシピ circle
+hide 材料 circle
+hide ハンバーガー circle
+hide ポテト circle
+hide パン circle
+hide 肉 circle
+hide 野菜 circle
+hide チーズ circle
+
+@enduml
